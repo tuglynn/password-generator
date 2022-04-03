@@ -1,3 +1,8 @@
+var lower = 'abcdefghijklmnopqrstuvwxyz';
+var upper = 'ABCDEFGHIJKLMNOPQRISTUVWXYZ';
+var numbers = '1234567890';
+var special = '?!@#$%^&*()`,.';
+
 // Assignment Code
 var generateBtn = document.querySelector("#generate");
 
