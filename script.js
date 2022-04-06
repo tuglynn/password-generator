@@ -9,6 +9,7 @@ let choices = [null, null, null, null];
 
 let userPick = null;
 
+
 // Assignment Code
 var generateBtn = document.querySelector("#generate");
 
@@ -31,6 +32,14 @@ function writePassword() {
       userPick = groups[0].concat(groups[1], groups[2], groups[3]);
       console.log('you picked all choices')
       console.log(userPick);
+      var password = []
+      for (var m = 0; m < passwordLength; m++) {
+        var character = userPick[Math.floor(Math.random() * passwordLength)]
+        password.push(character);
+        console.log('loop ran ' + m + ' times.');
+        console.log(password)
+      }
+      return password.join(character);
     } else if (choices[0] && choices[1] && choices[2] && !choices[3]) {
       userPick = groups[0].concat(groups[1], groups[2]);
       console.log('you picked everything except special characters');
@@ -38,9 +47,15 @@ function writePassword() {
     } else if (choices[0] && choices[1] && !choices[2] && !choices[3]) {
       userPick = groups[0].concat(groups[1]);
       console.log(userPick);
+    } else if (choices[0] && !choices[1] && !choices[2] && !choices[3]) {
+      userPick = choices[0];
+      console.log('only lowercase please');
+      console.log(userPick)
     }
 
+
   }
+
 }
 
 
@@ -49,8 +64,7 @@ function writePassword() {
 
 // passwordText.value = password;
 
-writePassword()
 
 
 // Add event listener to generate button
-generateBtn.addEventListener("click", writePassword());
+// generateBtn.addEventListener("click", writePassword());
