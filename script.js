@@ -3,7 +3,7 @@
 // var numbers = '1234567890';
 // var special = ' !"#$%&()*+,-./:;<=>?@[]^_`{}|~';
 
-let groups = ['abcdefghijklmnopqrstuvwxyz', 'ABCDEFGHIJKLMNOPQRISTUVWXYZ', '1234567890', ' !"#$%&()*+,-./:;<=>?@[]^_`{}|~'];
+let groups = ['abcdefghijklmnopqrstuvwxyz', 'ABCDEFGHIJKLMNOPQRISTUVWXYZ', '1234567890', ' !#$%&()*+,-./:;<=>?@[]^_`{}|~'];
 
 let choices = [null, null, null, null];
 
@@ -19,7 +19,6 @@ function writePassword() {
   var passwordText = document.querySelector("#password");
 
   var passwordLength = Number(prompt('Choose a length between 8 and 128 characters.'));
-  console.log(typeof passwordLength);
   console.log(passwordLength);
 
   if (passwordLength >= 8 && passwordLength <= 120) { // this statement sets to conditions. the password must be between 8 and 120
@@ -34,12 +33,12 @@ function writePassword() {
       console.log(userPick);
       var password = []
       for (var m = 0; m < passwordLength; m++) {
-        var character = userPick[Math.floor(Math.random() * passwordLength)]
+        var character = userPick[Math.floor(Math.random() * userPick.length)]
         password.push(character);
-        console.log('loop ran ' + m + ' times.');
-        console.log(password)
+        console.log(password);
+        console.log(character);
       }
-      return password.join(character);
+      return password.join();
     } else if (choices[0] && choices[1] && choices[2] && !choices[3]) {
       userPick = groups[0].concat(groups[1], groups[2]);
       console.log('you picked everything except special characters');
