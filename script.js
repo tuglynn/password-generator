@@ -9,6 +9,8 @@ let choices = [null, null, null, null];
 
 let userPick = null;
 
+var password = ''
+
 
 // Assignment Code
 var generateBtn = document.querySelector("#generate");
@@ -26,115 +28,30 @@ function writePassword() {
     for (var i = 0; i < groups.length; i++) {
       choices[i] = confirm('include ' + groups[i] + '?');
     }
-    console.log(choices);
-    if (choices[0] && choices[1] && choices[2] && choices[3]) {
-      userPick = groups[0].concat(groups[1], groups[2], groups[3]);
-      console.log('you picked all choices')
-      console.log(userPick);
-      var password = ''
-      for (var m = 0; m < passwordLength; m++) {
-        var character = userPick[Math.floor(Math.random() * userPick.length)]
-        password = password.concat(character);
-        console.log(password);
-      }
-      return password;
-    } else if (choices[0] && choices[1] && choices[2] && !choices[3]) {
-      userPick = groups[0].concat(groups[1], groups[2]);
-      console.log('you picked everything except special characters');
-      console.log(userPick);
-      var password = ''
-      for (var m = 0; m < passwordLength; m++) {
-        var character = userPick[Math.floor(Math.random() * userPick.length)]
-        password = password.concat(character);
-        console.log(password);
-      }
-      return password;
-    } else if (choices[0] && choices[1] && !choices[2] && !choices[3]) {
-      userPick = groups[0].concat(groups[1]);
-      console.log('only lower and uppercase');
-      console.log(userPick);
-      for (var m = 0; m < passwordLength; m++) {
-        var character = userPick[Math.floor(Math.random() * userPick.length)]
-        password = password.concat(character);
-        console.log(password);
-      }
-      return password;
-    } else if (choices[0] && !choices[1] && choices[2] && !choices[3]) {
-      userPick = groups[0].concat(groups[2]);
-      console.log('only lower and numbers');
-      console.log(userPick);
-      for (var m = 0; m < passwordLength; m++) {
-        var character = userPick[Math.floor(Math.random() * userPick.length)]
-        password = password.concat(character);
-        console.log(password);
-      }
-      return password;
-    } else if (choices[0] && !choices[1] && !choices[2] && choices[3]) {
-      userPick = groups[0].concat(groups[3]);
-      console.log('only lower and special');
-      console.log(userPick);
-      for (var m = 0; m < passwordLength; m++) {
-        var character = userPick[Math.floor(Math.random() * userPick.length)]
-        password = password.concat(character);
-        console.log(password);
-      }
-      return password;
-    } else if (choices[0] && !choices[1] && !choices[2] && !choices[3]) {
-      userPick = groups[0];
-      console.log('only lowercase please');
-      console.log(userPick)
-      for (var m = 0; m < passwordLength; m++) {
-        var character = userPick[Math.floor(Math.random() * userPick.length)]
-        password = password.concat(character);
-      }
-      return password;
-    } else if (!choices[0] && choices[1] && choices[2] && choices[3]) {
-      userPick = groups[1].concat(groups[2], groups[3]);
-      console.log('everything except lowercase');
-      console.log(userPick)
-      for (var m = 0; m < passwordLength; m++) {
-        var character = userPick[Math.floor(Math.random() * userPick.length)]
-        password = password.concat(character);
-      }
-      return password;
-    } else if (!choices[0] && !choices[1] && choices[2] && choices[3]) {
-      userPick = groups[2].concat(groups[3]);
-      console.log('only numbers and special characters');
-      console.log(userPick)
-      for (var m = 0; m < passwordLength; m++) {
-        var character = userPick[Math.floor(Math.random() * userPick.length)]
-        password = password.concat(character);
-      }
-      return password;
-    } else if (!choices[0] && !choices[1] && !choices[2] && choices[3]) {
-      userPick = groups[3];
-      console.log('only special characters');
-      console.log(userPick)
-      for (var m = 0; m < passwordLength; m++) {
-        var character = userPick[Math.floor(Math.random() * userPick.length)]
-        password = password.concat(character);
-      }
-      return password;
-    } else if (!choices[0] && choices[1] && !choices[2] && !choices[3]) {
-      userPick = groups[1];
-      console.log('only uppercase');
-      console.log(userPick)
-      for (var m = 0; m < passwordLength; m++) {
-        var character = userPick[Math.floor(Math.random() * userPick.length)]
-        password = password.concat(character);
-      }
-      return password;
-    } else if (!choices[0] && choices[1] && choices[2] && !choices[3]) {
-      userPick = groups[1].concat(groups[2]);
-      console.log('uppercase and numbers');
-      console.log(userPick)
-      for (var m = 0; m < passwordLength; m++) {
-        var character = userPick[Math.floor(Math.random() * userPick.length)]
-        password = password.concat(character);
-      }
-      return password;
+    // console.log(choices);
+    // if (choices[0] && choices[1] && choices[2] && choices[3]) {
+    //   userPick = groups[0].concat(groups[1], groups[2], groups[3]);
+    //   console.log('you picked all choices')
+    //   console.log(userPick);
+    //   var password = ''
+    //   for (var m = 0; m < passwordLength; m++) {
+    //     var character = userPick[Math.floor(Math.random() * userPick.length)]
+    //     password = password.concat(character);
+    //     console.log(password);
+
+    //   }
+    // }
+  }
+}
+generateBtn.addEventListener("click", writePassword);
+
+function generateArray() {
+  for (var i = 0; i < choices.length; i++) {
+    if (choices[i]) {
+      password = password.concact(groups[i])
     }
   }
+  return password
 }
 // passwordText.value = password;
 
