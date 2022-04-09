@@ -17,6 +17,9 @@ function writePassword() {
     const passwordLength = Number(prompt('Please enter your desired password length between 8 - 128 characters.'));
     if (passwordLength >= 8 && passwordLength <= 128) {
         console.log('awesome! you picked ' + passwordLength)
+    } else {
+        alert('please pick a number');
+        return;
     }
     let userInput = createUserString();
     for (let passwordIndex = 0; passwordIndex < passwordLength; passwordIndex++) {

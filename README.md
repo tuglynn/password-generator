@@ -16,3 +16,5 @@ The final function of writePassword is to return the passwordString to the passw
 
 
 https://monacoglynn.github.io/password-generator/
+
+![splash-page](./assets/images/splash.jpg)
