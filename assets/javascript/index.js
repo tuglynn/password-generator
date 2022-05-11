@@ -12,7 +12,6 @@ const symbols = ' !#$%&()*+,-./:;<=>?@[]^_`{}|~';
 function writePassword() {
     // let password = generatePassword(); // This runs our randomized loop that constructs our password.
     let passwordString = '';
-    // let passwordText = document.querySelector('#password'); // this allows us to select the password text box
     // this grabs the length of the desired password from the user.
     const passwordLength = Number(prompt('Please enter your desired password length between 8 - 128 characters.'));
     if (passwordLength >= 8 && passwordLength <= 128) {
@@ -63,7 +62,6 @@ function rand(stringLength) {
 }
 // this function will copy the text inside the password area.
 function copyPassword(event) {
-    let passwordText = document.querySelector('#password');
     //this method is similar to highlighting text with our mouse
     passwordText.select();
     //this actually copies to clipboard.
