@@ -1,6 +1,6 @@
 // Assignment Code
-let generateBtn = document.querySelector("#generate"); // this lets us select the generate password button
-let passwordText = document.querySelector('#password');
+const generateBtn = document.querySelector("#generate"); // this lets us select the generate password button
+const passwordText = document.querySelector('#password');
 //these are my string with all possible characters for the password.
 const lower = 'abcdefghijklmnopqrstuvwxyz';
 const upper = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
@@ -12,7 +12,7 @@ const symbols = ' !#$%&()*+,-./:;<=>?@[]^_`{}|~';
 function writePassword() {
     // let password = generatePassword(); // This runs our randomized loop that constructs our password.
     let passwordString = '';
-    let passwordText = document.querySelector('#password'); // this allows us to select the password text box
+    // let passwordText = document.querySelector('#password'); // this allows us to select the password text box
     // this grabs the length of the desired password from the user.
     const passwordLength = Number(prompt('Please enter your desired password length between 8 - 128 characters.'));
     if (passwordLength >= 8 && passwordLength <= 128) {
