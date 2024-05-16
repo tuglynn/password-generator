@@ -15,6 +15,6 @@ The last function generates a random number based off of the length of the argum
 The final function of writePassword is to return the passwordString to the password box on the HTML.
 
 
-https://monacoglynn.github.io/password-generator/
+https://tuglynn.github.io/password-generator/
 
 ![splash-page](./assets/images/splash.jpg)
